@@ -245,7 +245,7 @@ let datas_a;
   } else {
     datas_a = JSON.parse('<?=$j_a?>')
   }
-// console.log(datas_a);
+//console.log(datas_a);
 
 //-------- daily progress_today ---------
 let datas_t; 
@@ -263,7 +263,7 @@ let datas_p;
   } else {
     datas_p = JSON.parse('<?=$j_p?>')
   }
-// console.log(datas_p)
+console.log(datas_p)
 
 //------- total progress_how_long --------
 let datas_s; 
@@ -353,11 +353,11 @@ newobj=(outcome, key)=>{
 
 // ------ daily progress_stop_watch(taskid) ------
 var daily_progress_stop_watch = newobj(datas_a_sorter, 'stop_watch')
-    console.log(daily_progress_stop_watch + "total-stopwatch")
+    console.log(daily_progress_stop_watch)
 
 // ------ daily progress_today(taskid) ------
 var daily_progress_today = newobj(datas_t_sorter, 'today')
-    console.log(daily_progress_today + "total-today");
+    console.log(daily_progress_today);
 
 //------ total progress_stop_watch(taskid) ------
 var total_progress_stop_watch = newobj(datas_p_sorter, 'stop_watch')
