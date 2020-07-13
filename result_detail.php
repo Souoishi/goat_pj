@@ -313,7 +313,7 @@ var datas_t_sorter = tasksorter(datas_t)
     // console.log(datas_t_sorter);
 
 var datas_p_sorter = tasksorter(datas_p)
-    // console.log(datas_p_sorter);
+    console.log(datas_p_sorter);
 
 var datas_s_sorter = tasksorter(datas_s)
     // console.log(datas_s_sorter);
