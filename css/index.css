@@ -241,7 +241,7 @@ footer{
     margin: 0;
 }
 
-input, textArea {
+textArea {
     border-radius: 5px;
 }
 
@@ -269,35 +269,21 @@ fieldset{
     padding-left: px;
 }
 
+
 /* text */
-.cp_iptxt {
-	position: relative;
-	width: 90%;
-	margin: 5px auto;
-}
-.cp_iptxt input[type='text'] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 33%;
-	padding: 0.3em;
-	transition: 0.3s;
-	letter-spacing: 1px;
-	color: #aaaaaa;
-	border: 1px solid #1b2538;
-	border-radius: 4px;
-}
-.ef input[type='text']:focus {
+input[type="text"] { width: 30em; }
+input[type="text"] { height: 2.2em; }
+input[type='text']:focus {
 	border: 1px solid #0a2e38;
 	outline: none;
 	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
 }
 
-
 /* select */
 .cp_ipselect {
 	overflow: hidden;
-	width: 28%;
-	margin: 0.5em auto;
+	width: 24em;
+	margin: 0 auto;
 }
 .cp_ipselect select {
 	width: 100%;
@@ -335,19 +321,8 @@ fieldset{
 	border-top: 6px solid #666666;
 	pointer-events: none;
 }
-/* .cp_ipselect.cp_sl01 select {
-	padding: 8px 38px 8px 8px;
-	color: #666666;
-} */
 
-.category {
-    color: white;
-    font-size: 20px;
-    color: #daf6ff;
-    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
-
-}
-
+/* category */
 input[type="number"] { width: 30em; }
 input[type="number"] { height: 2.2em; }
 input[type='number']:focus {
@@ -356,6 +331,14 @@ input[type='number']:focus {
 	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
 }
 
+/* eave some commment here */
+textarea:focus{
+    border: 1px solid #0a2e38;
+	outline: none;
+	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
+}
+
+/* button */
 .button {
     display: inline-block;
     width: 200px;
@@ -367,6 +350,7 @@ input[type='number']:focus {
     border: 2px solid #fff;
     color: #fff;
     line-height: 50px;
+    border-radius: 4px;
   }
   .button::before,
   .button::after {
