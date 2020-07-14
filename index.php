@@ -94,44 +94,58 @@ if($status==false) {
 <legend>POST form</legend>
 <form method="post" id="plan_post" style="" action="insert.php">
   <div class="jumbotron">
-  <!-- <button id="switch"> switch </button> -->
-   <fieldset>
+  <fieldset>
+
     <div class="cp_iptxt">
-     <label class="ef">Task<br><input type="text" name="task" placeholder="Task:"></label>
+     <label class="ef">Task<br><input type="text" name="task" placeholder=""></label>
     </div>
+
     <div class="cp_iptxt">
-     <label class="ef">end date<br><input type="text" name="end_date" placeholder="end date:"></label>
+     <label class="ef">End date<br><input type="text" name="end_date" placeholder=""></label>
     </div>
+
     <div class="cp_iptxt">
-     <label class="ef">estimated time required <br>
-     <input class="ttt" type="number" name="how_long"></label>
+     <label class="ef">Estimated time required <br>
+     <input class="" type="number" name="how_long"></label>
     </div>
+
     <div class="cp_iptxt">
-     <label>leave some commment here<br> <textArea  class="com" name="comment" rows="4" cols="55" placeholder="leave some commment here : "></textArea></label>
-    </div>
-    <!-- <div class="category">Category</div> -->
-    <div class="cp_ipselect cp_sl01">
+     <label class="ef">Category<br></label>
+      <div class="cp_ipselect cp_sl01">
         <select id="tag" name="tag">
             <option value="" hidden>Choose</option>
-            <option value="html">html</option>
-            <option value="css">css</option>
             <option value="C">C</option>
+            <option value="css">CSS</option>
+            <option value="Go">GO</option>
+            <option value="html">HTML</option>
             <option value="Java">Java</option>
-            <option value="python">Python</option>
-            <option value="Swift">Swift</option>
-            <option value="Ruby">Ruby</option>
-            <option value="Go">Go</option>
-            <option value="php">PHP</option>
-            <option value="React">React</option>
             <option value="Javascript">Javascript</option> 
+            <option value="php">PHP</option>
+            <option value="python">Python</option>
+            <option value="React">React</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Swift">Swift</option>
+            <option value="Swift">Other</option>
         </select>
+      </div>
     </div>
+
+    <div class="cp_iptxt">
+     <label>Leave some commment here<br> <textArea  class="com" name="comment" rows="4" cols="55" placeholder=""></textArea></label>
+    </div>
+
     <br>
-     <input type="submit" id=plan_submit value="submit" class="button">
-    </fieldset>
+
+    <input type="submit" id=plan_submit value="submit" class="button">
+
+  </fieldset>
   </div>
 </form>
 <!-- Main[End] -->
+
+<br>
+<hr>
+<br>
 
 <!---plan 一覧-->
 <div style="text-align: center"><a href="dailyPlan.php"> <button class="button"> 今日の作業へgo! </button> </a>
