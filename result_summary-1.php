@@ -265,7 +265,9 @@ let datas_t;
   } else {
     datas_t = JSON.parse('<?=$j_t?>')
   }
-// console.log(datas_t);
+console.log(datas_t);
+console.log("data's t");
+
 
 //------- total progress_stop_watch --------
 let datas_p; 
@@ -284,6 +286,7 @@ let datas_s;
     datas_s = JSON.parse('<?=$j_s?>')
   }
 console.log(datas_s)
+console.log("data's s");
 
 
 sum =(data, key)=> {
@@ -315,6 +318,7 @@ var taskidtoday = taskidcollector(datas_t)
 
 //-------- daily progress_stop_watch ---------
 var daily_progress_stop_watch = sum(datas_a, 'stop_watch')/ 60 / 60;
+  daily_progress_stop_watch = daily_progress_stop_watch.toFixed(1)
   console.log(daily_progress_stop_watch + " total-stopwatch");
 
 //-------- daily progres_today ---------
@@ -324,7 +328,7 @@ var daily_progress_today = sum(datas_t, 'today');
 //-------- daily progress ---------
 var daily_progress_total = daily_progress_stop_watch / daily_progress_today
 var daily_progress = Math.round(daily_progress_total * 100);   //達成率
-  // console.log(daily_progress);
+  console.log(daily_progress);
 
 //------- total progress_stop_watch --------
 var total_progress_how_long = sum(datas_p, 'stop_watch')/60 / 60;
@@ -344,6 +348,7 @@ $.ajax({
   url: "result_insert_summary-1.php", // post先のページを入力
   type: "POST",//メソッド
   data: {      
+    'total_stopwatch' : daily_progress_stop_watch,
     'achievement' : daily_progress,
     'progress' : total_progress,
     'alltags' : taskidtoday

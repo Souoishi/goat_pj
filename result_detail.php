@@ -162,7 +162,7 @@ if($status_s==false) {
 </head>
 <body>
 <!--id="main"-->
-!-- Head[Start] -->
+<!-- Head[Start] -->
 <header>
 <nav>
  <div class="drawer">
@@ -314,20 +314,27 @@ var datas_t_sorter = tasksorter(datas_t)
 
 var datas_p_sorter = tasksorter(datas_p)
     console.log(datas_p_sorter);
-
+    console.log("total stop w");
 var datas_s_sorter = tasksorter(datas_s)
-    // console.log(datas_s_sorter);
+    console.log(datas_s_sorter);
+    console.log("howlong_long");
 
 
 // ------ daily progress_stop_watch ------
 newobj=(outcome, key)=>{
         totalarr = []
+        let record;
         if(outcome.length === 0 ){
             return 0
+        } else if (outcome.length === 1){
+                reacord = ({"taskid": parseInt(outcome.taskid), "tag": outcome.tag, [key]: outcome[key], "total":outcome[key] })
+                totalarr.push(reacord);
+                return totalarr
+
         } else {
             outcome.map(data => {
                 arr = []
-                let record;
+                console.log(data)
                 data.map(data1 => {
                     arr.push(parseInt(data1[key]))
                     reacord = ({"taskid": parseInt(data1.taskid), "tag": data1.tag, [key]: arr })
@@ -346,6 +353,7 @@ newobj=(outcome, key)=>{
                 }
                 //reacord['achievement'] = reacord.total / reacord.total_today
                 //totalarr.push(reacord)
+              
             })
             return totalarr
         }
@@ -359,13 +367,14 @@ var daily_progress_stop_watch = newobj(datas_a_sorter, 'stop_watch')
 var daily_progress_today = newobj(datas_t_sorter, 'today')
     console.log(daily_progress_today);
 
-//------ total progress_stop_watch(taskid) ------
+//------ total progress_stop_watch(taskid) ------// OK
 var total_progress_stop_watch = newobj(datas_p_sorter, 'stop_watch')
-    // console.log(total_progress_stop_watch);
+    console.log(total_progress_stop_watch);
 
 //------ total progress_how_long(taskid) ------
 var total_progress_how_long = newobj(datas_s_sorter, 'how_long')
     console.log(total_progress_how_long);
+    console.log('tt progress')
 
 // eroprogressChecker
 zeroprogressChecker=(howlong,stopwatch, func)=> {
@@ -410,11 +419,12 @@ checkthedefference=(howlong, stopwatch, func, zerochecker)=>{
 
 // ----- daily_progress -----
 var daily_progress = checkthedefference(daily_progress_today, daily_progress_stop_watch, taskidcollector, zeroprogressChecker)
-console.log(daily_progress)
+//console.log(daily_progress)
 
 // ----- total_progress -----
 var total_progress = checkthedefference(total_progress_how_long, total_progress_stop_watch, taskidcollector, zeroprogressChecker)
 console.log(total_progress)
+console.log('total progress')
 
 // tagcollector
 tagcollector=(outcome)=>{
@@ -483,55 +493,7 @@ total_progress_howlong_collector=(outcome)=>{
 var total_progress_how_long_per = total_progress_howlong_collector(total_progress_how_long)
   //console.log(total_progress_how_long_per)
 
-// daily_progress(ajax)
-for (i = 0; i < daily_progress.length; i++) {
-        
-    $.ajax({
-        url: "result_insert_detail.php", // post先のページを入力
-        type: "POST",//メソッド
-        data: {      
-          'daily_taskid' : daily_progress[i].taskid,
-          'daily_progress' : daily_progress[i].progress,
-          'daily_tag' : daily_progress[i].tag,
-          'total_today' : daily_progress[i].total_hour,
-          'total_stopwatch' : daily_progress[i].total_stopwatch,
 
-        },
-        success: function (data, textStatus, jqXHR) {
-            // alert('success data');
-             //whatever
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-             //if fails
-            alert('fail');
-        }
-    
-    });
-};
-
-// total_progress(ajax)
-for (i = 0; i < total_progress.length; i++) {
-        
-        $.ajax({
-            url: "result_insert_detail2.php", // post先のページを入力
-            type: "POST",//メソッド
-            data: {      
-              'total_taskid' : total_progress[i].taskid,
-              'total_progress' : total_progress[i].progress,
-              'total_tag' : total_progress[i].tag
-            },
-            success: function (data, textStatus, jqXHR) {
-                // alert('success data');
-                 //whatever
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                 //if fails
-                alert('fail');
-            }
-        
-        });
-    };
- 
 </script>
 
 <script>
