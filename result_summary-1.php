@@ -385,6 +385,7 @@ var chart = new Chart(ctx, {
     '#3333FF',
     '#DEEDFB',
   ],
+  weight:[1],
 }]
 },
   // Configuration options go here

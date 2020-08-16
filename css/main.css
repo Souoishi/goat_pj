@@ -1,15 +1,15 @@
+body {
+    margin: auto 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
 
 html{
     background: #0f3854;
     background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
-  
     background-size: 100%;
-    
 }
 
-body{
-    margin:0 auto 0 auto;
-}
 
 #mainvideo{
     background-size: contain;

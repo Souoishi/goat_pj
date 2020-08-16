@@ -89,13 +89,13 @@ if($status==false) {
 <!-- UIkit JS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script> -->
-
+<link rel="stylesheet" type="text/css" href="css/reset.css"> 
 <link rel="stylesheet" type="text/css" href="css/select.css"> 
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <!-- ファビコン追加 -->
 <link rel="shortcut icon" href='img/goat_32.ico' >
 
-<style>div{padding: 10px;font-size:16px;}</style>
+<style>div{font-size:16px;}</style>
 </head>
 <body>
 <!--id="main"-->

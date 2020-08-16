@@ -24,7 +24,7 @@ if($status==false){
   exit("SQLError:".$error[2]);
 }else{
   //５．index.phpへリダイレクト (you can decide where to redirect) basically take clinent back to home screen
-  header("Location: select.php");  // after : " ", you must need a space otherwise you will error
+  header("Location: index.php");  // after : " ", you must need a space otherwise you will error
   exit();
 
 }

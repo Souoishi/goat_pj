@@ -1,6 +1,7 @@
 body {
     margin: auto 0;
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
 
 html{
@@ -8,13 +9,13 @@ html{
     background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
     background-size: 100%;
     color: white;
+    height: 100%;
 }
 label{
     color: white;
     font-size: 20px;
     color: #daf6ff;
     text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
-
 }
 
 fieldset{
@@ -62,18 +63,19 @@ nav{
 /*ナビゲーション部分*/
  
 .menu ul li a {
-display:block;
+  display:block;
   font-weight:bold;
-padding: 2em;
-border-bottom: 1px dotted #CCC;
+  padding: 2em;
+  border-bottom: 1px dotted #CCC;
   color:#333;
   text-decoration:none;
 }
  
  
-.menu ul li a:hover
-{background-color:rgba(0,0,0,0.5);
-color:orange;}
+.menu ul li a:hover{
+    background-color:rgba(0,0,0,0.5);
+    color:orange;
+}
  
  
 .menu{
@@ -177,6 +179,7 @@ padding-right: 100px;
 .menu ul li a{
  padding: 0 1em;
  border-bottom: none;
+ font-size: 18px;
 }
 .menu ul li a:hover{
 background-color:transparent;
@@ -242,7 +245,7 @@ footer{
 }
 
 textArea {
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 .card {
@@ -271,26 +274,48 @@ fieldset{
 
 
 /* text */
-input[type="text"] { width: 30em; }
-input[type="text"] { height: 2.2em; }
+input[type="text"] { 
+    width: 30em;
+    height: 2.2em;
+    border-radius: 20px;
+    text-indent: 1em;
+}
 input[type='text']:focus {
 	border: 1px solid #0a2e38;
 	outline: none;
 	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
 }
 
+/* date */
+input[type="date"] { 
+    width: 30em;
+    height: 2.2em;
+    border-radius: 20px;
+    text-indent: 5px;
+    color: #808080kk;
+}
+input[type='date']:focus {
+	border: 1px solid #0a2e38;
+	outline: none;
+	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
+}
+
+
 /* select */
 .cp_ipselect {
 	overflow: hidden;
-	width: 24em;
+    width: 25em;
+    height: 2em;
 	margin: 0 auto;
 }
 .cp_ipselect select {
 	width: 100%;
 	padding-right: 1em;
 	cursor: pointer;
-	text-indent: 0.01px;
-	text-overflow: ellipsis;
+    text-indent: 10px;
+    margin: 5px 0 0 0;
+    text-overflow: ellipsis;
+    color: #808080;
 	border: none;
 	outline: none;
 	background: transparent;
@@ -305,12 +330,12 @@ input[type='text']:focus {
 .cp_ipselect.cp_sl01 {
 	position: relative;
 	border: 1px solid #bbbbbb;
-	border-radius: 2px;
+	border-radius: 20px;
 	background: #ffffff;
 }
 .cp_ipselect.cp_sl01::before {
 	position: absolute;
-	top: 1em;
+	top: 0.9em;
 	right: 0.9em;
 	width: 0;
 	height: 0;
@@ -323,19 +348,33 @@ input[type='text']:focus {
 }
 
 /* category */
-input[type="number"] { width: 30em; }
-input[type="number"] { height: 2.2em; }
+input[type="number"] {
+    width: 30em;
+    height: 2.2em;
+    border-radius: 20px;
+    text-indent: 1em;
+}
 input[type='number']:focus {
 	border: 1px solid #0a2e38;
 	outline: none;
 	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
 }
+/* スピンボタンの削除 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+}
+input[type="number"] {
+     -moz-appearance:textfield;
+}
 
-/* eave some commment here */
+/* commment */
 textarea:focus{
     border: 1px solid #0a2e38;
 	outline: none;
-	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
+    box-shadow: 0 0 10px rgba(255, 255, 255, .7);
+    text-indent: 1em;
 }
 
 /* button */
@@ -350,7 +389,7 @@ textarea:focus{
     border: 2px solid #fff;
     color: #fff;
     line-height: 50px;
-    border-radius: 4px;
+    border-radius: 10px;
   }
   .button::before,
   .button::after {
@@ -371,3 +410,18 @@ textarea:focus{
   .button:hover {
     background-color: rgba(255, 255, 255, .2);
   }
+
+.title {
+    font-size: 50px;
+}
+
+footer{
+    width: 100%;
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+}

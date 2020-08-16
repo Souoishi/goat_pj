@@ -54,23 +54,21 @@ if($status==false) {
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href='css/reset.css'>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
   
  <!-- ファビコン追加 -->
  <link rel="shortcut icon" href='img/goat_32.ico' >
   
-  <style>div{padding: 10px;font-size:16px;}</style>
+  <style>div{font-size:16px;}</style>
 </head>
 <body>
 
 <!-- Head[Start] -->
 <header>
 <nav>
- <div class="drawer">
- <!--- いわゆるロゴ svg を利用------>
- <div id="logo"><a href="main.php"><img src="img/Logo.jpg" alt="GOATロゴ"></a></div>
- 
-
+  <div class="drawer">
+    <!--- いわゆるロゴ svg を利用------>
+    <div id="logo"><a href="main.php"><img src="img/Logo.jpg" alt="GOATロゴ"></a></div>
   </div>
  <!-------------- drawer ここまで-->
  
@@ -97,23 +95,23 @@ if($status==false) {
   <fieldset>
 
     <div class="cp_iptxt">
-     <label class="ef">Task<br><input type="text" name="task" placeholder=""></label>
+     <label class="ef">Task<br><input type="text" name="task" placeholder="" required/></label>
     </div>
-
+    <br>
     <div class="cp_iptxt">
-     <label class="ef">End date<br><input type="text" name="end_date" placeholder=""></label>
+     <label class="ef">End date<br><input type="date" name="end_date" placeholder="" required/></label>
     </div>
-
+    <br>
     <div class="cp_iptxt">
      <label class="ef">Estimated time required <br>
-     <input class="" type="number" name="how_long"></label>
+     <input class="" type="number" name="how_long" placeholder="所要時間(時間)" required/></label>
     </div>
-
+    <br>
     <div class="cp_iptxt">
      <label class="ef">Category<br></label>
       <div class="cp_ipselect cp_sl01">
-        <select id="tag" name="tag">
-            <option value="" hidden>Choose</option>
+        <select id="tag" name="tag" required>
+            <option value="" hidden>カテゴリーを選択</option>
             <option value="C">C</option>
             <option value="css">CSS</option>
             <option value="Go">GO</option>
@@ -129,14 +127,14 @@ if($status==false) {
         </select>
       </div>
     </div>
-
+    <br>
     <div class="cp_iptxt">
-     <label>Leave some commment here<br> <textArea  class="com" name="comment" rows="4" cols="55" placeholder=""></textArea></label>
+     <label>Commment<br> <textArea  class="com" name="comment" rows="4" cols="55" placeholder=""></textArea></label>
     </div>
 
     <br>
 
-    <input type="submit" id=plan_submit value="submit" class="button">
+    <a href="dailyPlan.php"><input type="submit" id=plan_submit value="submit" class="button"></a>
 
   </fieldset>
   </div>
@@ -148,16 +146,18 @@ if($status==false) {
 <br>
 
 <!---plan 一覧-->
-<div style="text-align: center"><a href="dailyPlan.php"> <button class="button"> 今日の作業へgo! </button> </a>
-</div>
 
-  <h2 style="text-align: center">Your Posts</h2>
-    <div id=archive class=wrapper style="
+  <legend style="text-align: center" name="yourposts">Your Posts</legend>
+  <div style="text-align: center"><a href="dailyPlan.php"> <button class="button"> 今日の作業へgo! </button> </a></div>
+  <br>
+  <div id=archive class=wrapper style="
         display: grid;
         margin: auto;
         grid-template-columns: 1fr ;
     ">
-    </div>
+  </div>
+
+
 
     <!-- <footer>
   <p class="footer"> (C) g's academy</p>

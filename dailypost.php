@@ -6,7 +6,7 @@ loginCheck();
 
 $lid = $_SESSION['lid'];
 $name = $_SESSION['name'];
-echo $name;
+// echo $name;
 //1.  DB接続します
 $pdo = db_conn();
 
@@ -51,16 +51,14 @@ if($status==false) {
   <meta charset="UTF-8">
   <title>記録を投稿</title>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href='css/reset.css'>
   <link rel="stylesheet" type="text/css" href="css/dailypost.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-
   <!-- ファビコン追加 -->
   <link rel="shortcut icon" href="img/goat_32.ico">
 
-  <style>div{padding: 10px;font-size:16px;}</style>
+  <style>div{font-size:16px;}</style>
 </head>
 <body>
 
@@ -93,7 +91,7 @@ if($status==false) {
 <h1>記録を投稿する</h1>
 
 <form method="post" action="dailypost_act.php">
-    <h2 style="text-align: center">Post Now!</h2>
+    <legend>Post Now!</legend>
       <div id=dailypost class=wrapper style="
           display: grid;
           margin: auto;
