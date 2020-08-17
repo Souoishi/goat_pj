@@ -11,8 +11,8 @@ $name = $_SESSION['name'];
 $pdo = db_conn();
 
 //２．データ登録SQL作成
-$stmt = $pdo->prepare("SELECT * FROM detail_summary1 WHERE (detail_summary1.lid=:lid) 
-                                AND (DATE_FORMAT(detail_summary1.indate,'%M %d %Y') = DATE_FORMAT(sysdate(),'%M %d %Y')) ORDER BY tag");
+$stmt = $pdo->prepare("SELECT * FROM summary_table WHERE (summary_table.lid=:lid) 
+                                AND (DATE_FORMAT(summary_table.indate,'%M %d %Y') = DATE_FORMAT(sysdate(),'%M %d %Y')) ");
 $stmt->bindValue(":lid", $lid, PDO::PARAM_STR);
 $status = $stmt->execute();
 
@@ -37,6 +37,33 @@ if($status==false) {
 }
 
 
+
+
+//tag
+$order = $pdo->prepare("SELECT * FROM outcome_table WHERE (outcome_table.lid=:lid) 
+                                AND (DATE_FORMAT(outcome_table.indate,'%M %d %Y') = DATE_FORMAT(sysdate(),'%M %d %Y')) ORDER BY tag");
+$order->bindValue(":lid", $lid, PDO::PARAM_STR);
+$condition = $order->execute();
+
+//３．データ表示
+$view="";
+
+if($condition==false) {
+
+  //execute（SQL実行時にエラーがある場合）
+  sql_error($order);
+
+}else{
+  //Selectデータの数だけ自動でループしてくれる
+  //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
+ 
+  while( $t[] = $order->fetch(PDO::FETCH_ASSOC)){ 
+    //$view .= '<p>'.$r['id'].": ".$r['title'].'</p>';  //.= ,eams += in js , connect & update one by one
+    //$view .= "$r[url]";
+    //$view .= "<p>";
+    $taag = json_encode($t);  
+  }
+}
 
 
 
@@ -116,24 +143,13 @@ if($status==false) {
   }
 
 
-  tagCollector =(data)=> {
 
-  all_stop_watch = []
-      for (i = 0; i <data.length; i++) {
-          all_stop_watch.push(parseInt(data[i][key]))
-      }
-  // console.log(all_stop_watch);
-
-  var sum = all_stop_watch.reduce(function(a, b){
-      return a + b;
-  }, 0);
-  return sum;
-  }
   
 
   tagCollector=(input)=>{
         
         var onerecord = [input[0].tag] // one record
+        console.log(onerecord)
         if(input.length === 0 ){
             return 0
         } else if (input.length === 1) {
@@ -172,27 +188,35 @@ if($status==false) {
         datas = ("empty")
     } else {
       datas = JSON.parse('<?=$json?>')
-    console.log(datas)
-    console.log('kakusei')
+      var data = datas[0]
+    console.log(data)
+    
     }
    
+    var lid = ('<?=$lid?>')
 
-    var tags = tagCollector(datas)
+    let taag; 
+    if (!'<?=$taag?>') {
+      taag = ("empty")
+      console.log(taag)
+    } else {
+      taag = JSON.parse('<?=$taag?>')
+      var tags = tagCollector(taag)
+   
+      var str = tagStringify(tags)
+    }
+
+
     
-    var str = tagStringify(tags)
-    console.log(str)
+    //var total_stop = Math.round(sum(datas,'total_stopwatch')/60/60);
+      //console.log(total_stop)
+
+    //var total_todayy = Math.round(sum(datas,'total_today')/60/60);
+      //console.log(total_todayy)
 
 
-    
-    var total_stop = Math.round(sum(datas,'total_stopwatch')/60/60);
-      console.log(total_stop)
-
-    var total_todayy = Math.round(sum(datas,'total_today')/60/60);
-      console.log(total_todayy)
-
-
-    var total_achievement = Math.round(sum(datas,'achievement'));
-      console.log(total_achievement)
+    //var total_achievement = Math.round(sum(datas,'achievement'));
+      //console.log(total_achievement)
 
 
       //datas.map(data => 
@@ -213,18 +237,18 @@ if($status==false) {
             </tr>
             <tr>
               <td><h3> Total Study times : </h3></td>
-              <td><h3>${total_stop} h </h3></td>
+              <td><h3>${data.total_stopwatch} h </h3></td>
             </tr>
             <tr>
               <td><h3> Achievement : </h3></td>
-              <td><h3>${total_achievement} % </h3></td>
+              <td><h3>${data.achievement} % </h3></td>
             </tr>
             </table>  
               <h3> Comment : <br> <textArea id="comment" class="uk-textarea" name="comment" rows="4" cols="40"></textArea> </h3> 
 
-              <input type="hidden" name="lid" value=${datas[0].lid}>
-              <input type="hidden" name="total_study_time" value=${total_stop}>
-              <input type="hidden" name="total_achievement" value=${total_achievement}>
+              <input type="hidden" name="lid" value=${lid}>
+              <input type="hidden" name="total_study_time" value=${data.total_stopwatch}>
+              <input type="hidden" name="total_achievement" value=${data.achievement}>
               <input type="hidden" name="str" value=${str}>
  
               <input type="submit" id=submit  value="Submit">
