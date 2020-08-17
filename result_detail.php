@@ -327,7 +327,7 @@ newobj=(outcome, key)=>{
         if(outcome.length === 0 ){
             return 0
         } else if (outcome.length === 1){
-                reacord = ({"taskid": parseInt(outcome.taskid), "tag": outcome.tag, [key]: outcome[key], "total":outcome[key] })
+                reacord = ({"taskid": parseInt(outcome[0].taskid), "tag": outcome[0].tag, [key]: outcome[0][key], "total":outcome[0][key] })
                 totalarr.push(reacord);
                 return totalarr
 

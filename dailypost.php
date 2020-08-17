@@ -192,16 +192,21 @@ if($condition==false) {
       datas = JSON.parse('<?=$json?>')
       var data = datas[0]
     console.log(data)
-    console.log('kakusei')
+    
     }
    
     var lid = ('<?=$lid?>')
-    var taag = JSON.parse('<?=$taag?>')
-    
-    var tags = tagCollector(taag)
+
+    let taag; 
+    if (!'<?=$taag?>') {
+      taag = ("empty")
+      console.log(taag)
+    } else {
+      taag = JSON.parse('<?=$taag?>')
+      var tags = tagCollector(taag)
    
-    var str = tagStringify(tags)
-    console.log(str)
+      var str = tagStringify(tags)
+    }
 
 
     

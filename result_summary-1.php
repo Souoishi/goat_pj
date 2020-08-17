@@ -152,7 +152,7 @@ if($status_s==false) {
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <link rel="stylesheet" href='css/reset.css'>
 <link rel="stylesheet" type="text/css" href="css/result.css">
-<link rel="stylesheet" type="text/css" href="css/chart.css">
+
 <!-- ファビコン追加 -->
 <link rel="shortcut icon" href='img/goat_32.ico' >
 <!-- <link rel="stylesheet" href="./chart.css"> -->
@@ -328,7 +328,13 @@ var daily_progress_today = sum(datas_t, 'today');
 //-------- daily progress ---------
 var daily_progress_total = daily_progress_stop_watch / daily_progress_today
 var daily_progress = Math.round(daily_progress_total * 100);   //達成率
-  console.log(daily_progress);
+
+if (Number.isNaN(daily_progress)){
+  daily_progress = 0
+  console.log('SUP')
+  console.log(daily_progress)
+}
+  
 
 //------- total progress_stop_watch --------
 var total_progress_how_long = sum(datas_p, 'stop_watch')/60 / 60;
@@ -342,8 +348,14 @@ var total_progress_stop_watch = sum(datas_s, 'how_long');
 var total_progress_total = total_progress_how_long / total_progress_stop_watch
 var total_progress = Math.round(total_progress_total * 100);   //達成率
   //console.log(total_progress);
-    
-console.log(daily_progress_today);
+
+if (Number.isNaN(total_progress)){
+  total_progress = 0
+  
+}
+   
+
+
 $.ajax({
   url: "result_insert_summary-1.php", // post先のページを入力
   type: "POST",//メソッド
