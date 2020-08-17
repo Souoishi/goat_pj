@@ -155,13 +155,14 @@ if($status_s==false) {
 <title>ユーザーページ（結果まとめページ想定）</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/result_detail.css">
 <!-- ファビコン追加 -->
 <link rel="shortcut icon" href='img/goat_32.ico' >
+<style>div{font-size:16px;}</style>
 
 </head>
 <body>
-<!--id="main"-->
 <!-- Head[Start] -->
 <header>
 <nav>
@@ -189,18 +190,12 @@ if($status_s==false) {
 
 <!-- Main[Start] -->
 <div>
-  <h2 class="title">achievement rate as a whole</h2>
-    <div class="container jumbotron"><?=$view?></div>
-
-    <div class="profile container" style="display:flex; flex-direction: column; text-align: center;  border:none; border-radius: 10px 10px 0 0;">
-        <!-- <h1 style=> User Info</h1> -->
-        <!-- <a class="navbar-brand" href="result_summary-1.php"><button type="button">戻る</button></a> -->
-        <!-- <div id=profile></div> -->
+  <legend>Record</legend>
 
     <!-- chart.js -->
     <!-- aily_progress(chart) -->
     <div class="chart">
-    <h3 class="title">today's achievement</h3>
+    <h2 class="title_main">today's achievement</h2>
         <canvas id="myChart" width="1500" height="400"></canvas>
         <div class="count" id="archive_daily">
         </div>
@@ -210,7 +205,7 @@ if($status_s==false) {
     <br>
     <!-- total_progress(chart) -->
     <div class="chart">
-    <h3 class="title">Total achievement</h3>
+    <h2 class="title_main">Total achievement</h2>
         <canvas id="myChart_" width="1500" height="400"></canvas>
         <div class="count" id="archive_total">
         </div>
@@ -219,11 +214,6 @@ if($status_s==false) {
   
 <br>
 <br>
-    
-<div class="title">
-  <p> (C) g's academy</p>
-</div>
-
 
 
 </div>
@@ -245,7 +235,6 @@ let datas_a;
   } else {
     datas_a = JSON.parse('<?=$j_a?>')
   }
-//console.log(datas_a);
 
 //-------- daily progress_today ---------
 let datas_t; 
@@ -254,7 +243,6 @@ let datas_t;
   } else {
     datas_t = JSON.parse('<?=$j_t?>')
   }
-// console.log(datas_t);
 
 //------- total progress_stop_watch --------
 let datas_p; 
@@ -263,7 +251,6 @@ let datas_p;
   } else {
     datas_p = JSON.parse('<?=$j_p?>')
   }
-console.log(datas_p)
 
 //------- total progress_how_long --------
 let datas_s; 
@@ -272,7 +259,6 @@ let datas_s;
   } else {
     datas_s = JSON.parse('<?=$j_s?>')
   }
-// console.log(datas_s)
 
 
 // ------ tasksoter ------
@@ -307,17 +293,12 @@ tasksorter=(input)=>{
 }
 
 var datas_a_sorter = tasksorter(datas_a)
-    // console.log(datas_a_sorter);
 
 var datas_t_sorter = tasksorter(datas_t)
-    // console.log(datas_t_sorter);
 
 var datas_p_sorter = tasksorter(datas_p)
-    console.log(datas_p_sorter);
-    console.log("total stop w");
+
 var datas_s_sorter = tasksorter(datas_s)
-    console.log(datas_s_sorter);
-    console.log("howlong_long");
 
 
 // ------ daily progress_stop_watch ------
@@ -338,17 +319,14 @@ newobj=(outcome, key)=>{
                 data.map(data1 => {
                     arr.push(parseInt(data1[key]))
                     reacord = ({"taskid": parseInt(data1.taskid), "tag": data1.tag, [key]: arr })
-                    // console.log(reacord)
                 })
                 if (reacord[key].length === 1) {
                     reacord['total'] = reacord[key][0]
-                    //console.log(reacord.stop_watch[0] + "total1")
                     totalarr.push(reacord)
                 } else {
                     reacord['total'] = reacord[key].reduce(function(a, b){
                         return a + b;
                     }, 0);
-                    //console.log(reacord['total'])
                     totalarr.push(reacord)
                 }
                 //reacord['achievement'] = reacord.total / reacord.total_today
@@ -437,7 +415,6 @@ tagcollector=(outcome)=>{
 
 // tag
 var tags = tagcollector(total_progress)
-  //console.log(tags)
 
 
 daily_tagcollector=(outcome)=>{
@@ -463,8 +440,6 @@ daily_progresscollector=(outcome)=>{
 
 // daily_progress_per
 var daily_progress_per = daily_progresscollector(daily_progress)
-  console.log(daily_progress_per)
-  console.log('yo')
 
 // total_progresscollector
 total_progresscollector=(outcome)=>{
@@ -477,8 +452,6 @@ total_progresscollector=(outcome)=>{
 
 // total_progress_per
 var total_progress_per = total_progresscollector(total_progress)
-  console.log(total_progress_per)
-  console.log('yo1')
 
 // total_progress_howlong_collector
 total_progress_howlong_collector=(outcome)=>{
@@ -491,7 +464,6 @@ total_progress_howlong_collector=(outcome)=>{
 
 // total_progress_per
 var total_progress_how_long_per = total_progress_howlong_collector(total_progress_how_long)
-  //console.log(total_progress_how_long_per)
 
 
 </script>
@@ -589,7 +561,6 @@ var chart = new Chart(ctx, {
     datasets: [{
       // label: 'My First dataset',
       data: total_progress_per,
-      // data: [70,50],
     //   background: linear-gradient(to bottom,rgba(7,27,82,1) 100%, rgba(0,128,128,1) 0%);
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',

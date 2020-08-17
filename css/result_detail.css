@@ -1,3 +1,8 @@
+body {
+    margin: auto 0;
+    font-family: 'Roboto', sans-serif;
+}
+
 html{
     /* background: #25273A; */
     background: #0f3854;
@@ -7,7 +12,6 @@ html{
 }
 
 legend{
-    color: white;
     font-size: 60px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -46,24 +50,25 @@ nav{
 /*ナビゲーション部分*/
  
 .menu ul li a {
-display:block;
+  display:block;
   font-weight:bold;
-padding: 2em;
-border-bottom: 1px dotted #CCC;
+  padding: 2em;
+  border-bottom: 1px dotted #CCC;
   color:#333;
   text-decoration:none;
 }
  
  
-.menu ul li a:hover
-{background-color:rgba(0,0,0,0.5);
-color:orange;}
+.menu ul li a:hover{
+    background-color:rgba(0,0,0,0.5);
+    color:orange;
+}
  
  
 .menu{
+ 
   text-align:center;
   background-color:rgba(255,255,255,0.5);
-  text-shadow: 0 0 10px rgba(255, 255, 255, .7);
   transition: 0.5s ease;/*滑らかに表示*/
   -webkit-transform: translateX(100%);/*画面より100%外へ押し出し非表示にさせる*/
  
@@ -161,6 +166,7 @@ padding-right: 100px;
 .menu ul li a{
  padding: 0 1em;
  border-bottom: none;
+ font-size: 18px;
 }
 .menu ul li a:hover{
 background-color:transparent;
@@ -202,11 +208,12 @@ footer{
 }
 .footer{
     font-size:10px;
-    color:white;
+    color:black;
     text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
     text-align: center;
     padding-bottom: 30px;
 }
+
 
 #myChart{
     width: 200px;
@@ -235,10 +242,9 @@ em{
 
 .title_main {
     color: white;
-    font-size: 60px;
+    font-size: 35px;
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
-    color: #daf6ff;
     text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
 }

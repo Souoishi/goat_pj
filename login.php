@@ -46,7 +46,7 @@
      <label><input type="text" name="lid" placeholder="Login Id"></label><br><br><br>
      <label><input type="text" name="lpw" placeholder="password"></label><br><br>
      <br>
-     <input type="submit" value="submit">
+     <input type="submit" value="submit" class="button">
     </fieldset>
   </div>
 </form>
