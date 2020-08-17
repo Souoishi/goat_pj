@@ -69,7 +69,7 @@ if($status==false) {
   <!-- ファビコン追加 -->
   <link rel="shortcut icon" href='img/goat_32.ico' >
 
-  <style>div{padding: 10px;font-size:16px;float:left;margin:0 auto;}</style>
+  <style>div{font-size:16px;float:left;margin:0 auto;}</style>
 </head>
 <body>
 
@@ -102,7 +102,7 @@ if($status==false) {
 <h1>本日のタスクメニュー</h1>
 <!---plan 一覧-->
 
-<h2 style="text-align: center">Your Posts</h2>
+<legend style="text-align: center">Your Posts</legend>
     <div id=archive class=wrapper style="
         display: grid;
         margin: auto;

@@ -36,7 +36,7 @@ if($status==false){
   sql_error($stmt);
 }else{
   //*** function化する！*****************
-  redirect("index.php");
+  redirect("dailyPlan.php");
 }
 
 ?>

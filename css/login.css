@@ -1,3 +1,8 @@
+body {
+    margin: auto 0;
+    font-family: 'Roboto', sans-serif;
+}
+
 html{
     background: #0f3854;
     background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
@@ -240,3 +245,51 @@ footer{
     flex-direction: column;
     min-height: 100vh;
 }
+
+ /* text */
+ input[type="text"] { 
+    width: 25em;
+    height: 2.2em;
+    border-radius: 20px;
+    text-indent: 1em;
+}
+input[type='text']:focus {
+	border: 1px solid #0a2e38;
+	outline: none;
+	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
+}
+
+/* button */
+.button {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    text-decoration: none;
+    line-height: 54px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    line-height: 50px;
+    border-radius: 10px;
+    margin: 0 auto 30px;
+  }
+  .button::before,
+  .button::after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    content: '';
+  }
+  .button,
+  .button::before,
+  .button::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  .button:hover {
+    background-color: rgba(255, 255, 255, .2);
+  }

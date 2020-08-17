@@ -31,7 +31,7 @@
    <li ><a href="result_summary-1.php">Record</a></li>
    <li><a href="dailypost.php">Post</a></li>
    <li><a href="select.php">Ranking</a></li>
-   <li ><a href="logout.php">Logout</a></li>
+   <li ><a href="login.php">Login</a></li>
   </ul>
  </div>
 </nav>
@@ -51,26 +51,28 @@
   <!-- 修正ポイント -->   
      <label> <input type="text" name="occupation" placeholder="Occupation"></label><br><br><br>
      <label>
+       <div class="cp_ipselect cp_sl01">
         <select id="class_1" name="class_1">
           <option value="lab">東京Lab</option>
           <option value="dev">東京Dev</option> 
           <option value="dev">福岡Lab</option>
           <option value="dev">福岡Dev</option> 
         </select>
-      </label><br><br><br>
+        </div>
+      </label><br><br>
     <label> <input type="number" name="class_2" placeholder="期"></label><br><br><br>
     
   <!-- 修正ポイント --> 
      <input type="hidden" name="kanri_flg" value=1 > <!--後で修正-->
      <input type="hidden" name="life_flg" value=1 >
-     <input type="submit" value="submit">
+     <input type="submit" value="submit" class="button">
      </div>
     </fieldset>
 </form>
 
-<footer>
+<!-- <footer>
   <p class="footer"> (C) g's academy</p>
-</footer>
+</footer> -->
 
 </div>
 </body>
