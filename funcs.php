@@ -45,7 +45,7 @@ function loginCheck() {
         echo '<body  style="background: #0f3854  ; background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%)"></body>';
         echo '<p style="font-size:50px ; text-align:center ; color:#daf6ff ;  text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);">login error</p>';
         
-        echo '<div style="display:flex; justify-content: center;" > <button style="font-size:50px ; border-radius: 20px ; background: #0f3854  ; background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%); color:#daf6ff ; padding: 10px; background-color: ; text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);"> <a href="login.php" style="text-decoration: none;  color: inherit;"> Go to Login age </a></button><div>';
+        echo '<div style="display:flex; justify-content: center;" > <button style="font-size:50px ; border-radius: 20px ; background: #0f3854  ; background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%); color:#daf6ff ; padding: 10px; background-color: ; text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);"> <a href="login.php" style="text-decoration: none;  color: inherit;"> Go to Login page </a></button><div>';
         //redirect('login.php');
         
         
