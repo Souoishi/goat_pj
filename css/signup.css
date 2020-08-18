@@ -1,6 +1,5 @@
 body {
     margin: auto 0;
-    font-family: 'Roboto', sans-serif;
     height: 100%;
 }
 
@@ -234,13 +233,19 @@ footer{
 
 
  /* text */
-input[type="text"] { 
+input[type="text"], input[type="password"] { 
     width: 25em;
     height: 2.2em;
     border-radius: 20px;
     text-indent: 1em;
 }
 input[type='text']:focus {
+	border: 1px solid #0a2e38;
+	outline: none;
+	box-shadow: 0 0 10px rgba(255, 255, 255, .7);
+}
+
+input[type="password"] {
 	border: 1px solid #0a2e38;
 	outline: none;
 	box-shadow: 0 0 10px rgba(255, 255, 255, .7);

@@ -1,6 +1,6 @@
 body {
     margin: auto 0;
-    font-family: 'Roboto', sans-serif;
+    
 }
 
 html{
@@ -226,13 +226,14 @@ a{
 }
 
 canvas{
-    padding-right: 150px;
+    padding-right: auto;
+    padding-left: auto;
+    margin-left: 5rem; 
+    margin-right: 5rem; 
     padding-top: 70px;
 }
 
-.chart1{
- 
-}
+
 
 .all{
     display: flex;

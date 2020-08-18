@@ -9,7 +9,7 @@ loginCheck();
 
 $lid = $_SESSION['lid'];
 $alltags = $_SESSION['alltags'];
-echo $alltags[0];
+
 
 // $name = $_SESSION["name"];
 // $kanri_flg = $_SESSION["kanri_flg"];
@@ -155,6 +155,7 @@ if($status_s==false) {
 <title>ユーザーページ（結果まとめページ想定）</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/result_detail.css">
 <!-- ファビコン追加 -->
@@ -189,9 +190,25 @@ if($status_s==false) {
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
-<div>
+<div class=custom 
+    style="background: #0f3854;
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+    background-size: 100%;
+    color: white;
+    height: 100%;
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+">
+  <a href="result_summary-1.php">
+    <button type="button" class="btn btn-primary btn-lg" style="margin-top:1rem; margin-left:1rem">Back to summary</button>
+  </a>
+
   <legend>Record</legend>
 
+  
     <!-- chart.js -->
     <!-- aily_progress(chart) -->
     <div class="chart">

@@ -69,7 +69,7 @@ if($status==false) {
   <!-- ファビコン追加 -->
   <link rel="shortcut icon" href='img/goat_32.ico' >
 
-  <style>div{font-size:16px;float:left;margin:0 auto;}</style>
+  
 </head>
 <body>
 
@@ -124,7 +124,7 @@ if($status==false) {
         datas.map(data => 
         $('#archive').append( 
                 `<div class="card" style=
-                "width:100%; 
+                "width:60%; 
                 margin: auto;
                 display: flex;
                 ">
@@ -142,7 +142,7 @@ if($status==false) {
                     </div>
                     
                     <div class="up2">
-                    <form method="post" id="plan_post" action="dailyinsert.php">
+                    <form method="post" id="plan_post" action="dailyInsert.php">
                         <label>目標時間  Hour: <select id="today" name="today"></label><br>
                             <option selected="selected"></option>
                             <option value="1">1</option>

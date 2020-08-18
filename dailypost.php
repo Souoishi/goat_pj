@@ -191,6 +191,7 @@ if($condition==false) {
       var data = datas[0]
     console.log(data)
     
+    
     }
    
     var lid = ('<?=$lid?>')

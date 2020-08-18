@@ -147,7 +147,7 @@ if($status==false) {
     datas = JSON.parse('<?=$json?>')
     
   console.log(datas)
-  console.log(datas[0].lid)
+  
   datas.map(data => 
     $('#cg_time').append( 
       `<div class="card" style=

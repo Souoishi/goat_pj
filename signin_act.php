@@ -57,7 +57,7 @@ $_SESSION["lid"] = $lid;                      // for displaying username when yo
 $_SESSION["kanri_flg"] = $kanri_flg; // $Session means that server handle it 
 $_SESSION["class_2"] = $class_2;
 $_SESSION["class_1"] = $class_1;
-redirect("select.php");
+redirect("main.php");
 
 
 
