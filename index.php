@@ -53,6 +53,7 @@ if($status==false) {
   <title>計画表</title>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  
 
   <link rel="stylesheet" href='css/reset.css'>
   <link rel="stylesheet" type="text/css" href="css/index.css">

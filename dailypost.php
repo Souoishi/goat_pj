@@ -6,7 +6,7 @@ loginCheck();
 
 $lid = $_SESSION['lid'];
 $name = $_SESSION['name'];
-// echo $name;
+
 //1.  DB接続します
 $pdo = db_conn();
 
@@ -85,7 +85,7 @@ if($condition==false) {
   <!-- ファビコン追加 -->
   <link rel="shortcut icon" href="img/goat_32.ico">
 
-  <style>div{font-size:16px;}</style>
+  <!---<style>{padding: 10px;font-size:16px;}</style>-->
 </head>
 <body>
 
