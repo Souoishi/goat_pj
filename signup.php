@@ -46,7 +46,7 @@
     <div class="sign">
      <label><input type="text" name="name" placeholder="Name"></label><br><br><br>
      <label><input type="text" name="lid" placeholder="Id"></label><br><br><br>
-     <label><input type="text" name="lpw" placeholder="Password"></label><br><br><br>
+     <label><input type="password" name="lpw" placeholder="Password"></label><br><br><br>
      <label> <input type="text" name="age" placeholder="Age"></label><br><br><br>
   <!-- 修正ポイント -->   
      <label> <input type="text" name="occupation" placeholder="Occupation"></label><br><br><br>

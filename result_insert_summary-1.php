@@ -75,13 +75,13 @@ if($condition==false) {
 if ($view){
   $update = $pdo->prepare("UPDATE summary_table SET lid=:lid, total_stopwatch=:total_stopwatch, achievement=:achievement, indate=sysdate() WHERE lid=:lid AND DATE_FORMAT(summary_table.indate,'%M %d %Y') = DATE_FORMAT(sysdate(),'%M %d %Y')");
   $update->bindValue(":lid", $lid, PDO::PARAM_STR); 
-  $update->bindValue(":total_stopwatch", $total_stopwatch, PDO::PARAM_INT);
+  $update->bindValue(":total_stopwatch", $total_stopwatch, PDO::PARAM_STR);
   $update->bindValue(":achievement", $achievement, PDO::PARAM_INT);
   $status = $update->execute();
 } else { 
   $update = $pdo->prepare("INSERT INTO summary_table(lid,total_stopwatch,achievement,indate)VALUES(:lid, :total_stopwatch, :achievement, sysdate() )");
   $update->bindValue(":lid", $lid, PDO::PARAM_STR);
-  $update->bindValue(":total_stopwatch", $total_stopwatch, PDO::PARAM_INT); 
+  $update->bindValue(":total_stopwatch", $total_stopwatch, PDO::PARAM_STR); 
   $update->bindValue(":achievement", $achievement, PDO::PARAM_INT);
   $status = $update->execute(); 
 }

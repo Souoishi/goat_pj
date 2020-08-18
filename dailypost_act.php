@@ -26,7 +26,7 @@ $stmt = $pdo->prepare("INSERT INTO ranking_table(lid, name, tag, total_stopwatch
 $stmt->bindValue(":lid", $lid, PDO::PARAM_STR);  // IT SHOULD BE CORRESPONDED TO YOUR SETTING ON DB IN MYSQLFOR STR : Integer（数値の場合 PDO::PARAM_INT) 
 $stmt->bindValue(":name", $name, PDO::PARAM_STR);
 $stmt->bindValue(":tag", $tag, PDO::PARAM_STR);  
-$stmt->bindValue(":total_stopwatch", $total_stopwatch, PDO::PARAM_INT);  
+$stmt->bindValue(":total_stopwatch", $total_stopwatch, PDO::PARAM_STR);  
 $stmt->bindValue(":total_achievement", $total_achievement, PDO::PARAM_INT); 
 $stmt->bindValue(":comment", $comment, PDO::PARAM_STR);  
 $stmt->bindValue(":class_1", $class_1, PDO::PARAM_STR);  

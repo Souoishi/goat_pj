@@ -150,6 +150,7 @@ if($status_s==false) {
 <title>結果</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href='css/reset.css'>
 <link rel="stylesheet" type="text/css" href="css/result.css">
 
@@ -188,56 +189,57 @@ if($status_s==false) {
 
 <!-- Main[Start] -->
 
-  
-  <a class="navbar-brand" href="result_detail.php"><button type="button">詳細</button></a>
-    <div class="container jumbotron"><?=$view?></div>
-
-   
-
-   <!-- Main[Start] -->
-  
-  
-    <!-- chart.js -->
-    <!-- aily_progress(chart) -->
-
-
-    <div class="container jumbotron"><?=$view?></div>
-    <div class="profile container" >
-        <div id=profile></div>
-    </div>
-    <!-- chart.js -->
-    <!-- aily_progress(chart) -->
-    <div class=all>
-    <div class="chart1">
-      <p>Today's achievement</p>
-      <div class="maintop1">
-        <canvas id="myChart" width="400" height="400"></canvas>
-        <div class="count" id="archive_daily" style="color:white"></div>
-      </div>
-
-      <div class="maindown">
-
-        <div id="daily_progress_stop_watch"></div>
-        <div id=""></div>
-      </div>
-    </div>
+<div class=custom 
+    style="background: #0f3854;
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+    background-size: 100%;
+    color: white;
+    height: 100%;
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     
-    <!-- total_progress(chart) -->
-    <div class="chart2">
-    <p>All achievement</p>
-    <div class="maintop2">
-        <canvas id="myChart_" width="400" height="400"></canvas>
-        <div class="count" id="archive_total" style="color:white;"></div>
+">
+  
+  <a href="result_detail.php">
+    <button type="button" class="btn btn-primary btn-lg" style="margin-top:1rem; margin-left:1rem">Go to details</button>
+  </a>
+    
+    
+    <!-- chart.js -->
+    <!-- daily_progress(chart) -->
+    <div class=all style="display:flex; justify-content: center;">
+      <div class="chart1">
+        <p>Today's achievement</p>
+        <div class="maintop1">
+          <canvas id="myChart" width="400" height="400"></canvas>
+          <div class="count" id="archive_daily" style="color:white"></div>
+        </div>
 
-  </div>
+        <div class="maindown">
 
-      <div class="maindown">
+          <div id="daily_progress_stop_watch"></div>
+          <div id=""></div>
+        </div>
+      </div>
+      
+      <!-- total_progress(chart) -->
+      <div class="chart2">
+      <p>All achievement</p>
+      <div class="maintop2">
+          <canvas id="myChart_" width="400" height="400"></canvas>
+          <div class="count" id="archive_total" style="color:white;"></div>
 
       </div>
+
+        <div class="maindown">
+
+        </div>
     </div>
 
   </div>
-
+</div>
 <!-- Main[End] -->
 
 <!-- jquery -->
@@ -319,7 +321,8 @@ var taskidtoday = taskidcollector(datas_t)
 //-------- daily progress_stop_watch ---------
 var daily_progress_stop_watch = sum(datas_a, 'stop_watch')/ 60 / 60;
   daily_progress_stop_watch = daily_progress_stop_watch.toFixed(1)
-  console.log(daily_progress_stop_watch + " total-stopwatch");
+  console.log(daily_progress_stop_watch);
+  console.log(" total-stopwatch")
 
 //-------- daily progres_today ---------
 var daily_progress_today = sum(datas_t, 'today');
